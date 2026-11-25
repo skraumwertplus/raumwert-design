@@ -45,6 +45,8 @@
   --rw-plan-terrain: #EEF1EC;
   --rw-plan-neubau: #E30613;          /* Neubau rot (SIA-Konvention) */
   --rw-plan-abbruch: #FFD500;         /* Abbruch gelb (SIA-Konvention) */
+  --rw-plan-hoehenlinie: #A39581;     /* Höhenlinien Terrain */
+  --rw-plan-hoehenlinie-text: #7D705C;
 
   /* Schrift */
   --rw-schrift: "Montserrat", Arial, sans-serif;
