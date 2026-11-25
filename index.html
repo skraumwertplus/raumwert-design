@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>raumwert plus: Stil für Programme</title>
+<link rel="stylesheet" href="css/raumwert.css">
+<link rel="stylesheet" href="css/druck.css">
+<style>
+  .muster { display: flex; flex-wrap: wrap; gap: 8pt; align-items: center; margin: 6pt 0 14pt; }
+  .farbe { border-radius: var(--rw-rund); overflow: hidden; border: 1px solid var(--rw-linie); font-size: var(--rw-gr-klein); }
+  .farbe i { display: block; height: 46px; }
+  .farbe span { display: block; padding: 6pt 8pt; }
+</style>
+</head>
+<body>
+<div class="rw-blatt">
+  <div class="rw-kopf">
+    <div class="rw-absender"><b>raumwert plus GmbH</b><br>Oberlandstrasse 111<br>8610 Uster<br>+41 78 343 00 56<br>www.raumwertplus.ch<br>info@raumwertplus.ch</div>
+    <img class="rw-logo" src="assets/logo.png" alt="raumwert plus">
+  </div>
+
+  <h1>Stil für Programme</h1>
+  <p class="rw-lead">Musterseite aller Bausteine. Änderungen in css/tokens.css wirken hier und in allen Programmen.</p>
+
+  <h2>Farben</h2>
+  <div class="rw-raster-3">
+    <div class="farbe"><i style="background:var(--rw-navy)"></i><span>Navy, Text und Titel<br>--rw-navy</span></div>
+    <div class="farbe"><i style="background:var(--rw-petrol)"></i><span>Petrol, Akzent<br>--rw-petrol</span></div>
+    <div class="farbe"><i style="background:var(--rw-salbei)"></i><span>Salbei, Band<br>--rw-salbei</span></div>
+    <div class="farbe"><i style="background:var(--rw-karte)"></i><span>Karte<br>--rw-karte</span></div>
+    <div class="farbe"><i style="background:var(--rw-karte-aktiv)"></i><span>Karte aktiv<br>--rw-karte-aktiv</span></div>
+    <div class="farbe"><i style="background:var(--rw-linie)"></i><span>Linie<br>--rw-linie</span></div>
+  </div>
+
+  <h2>Buttons und Pills</h2>
+  <div class="muster">
+    <a class="rw-button" href="#">Analyse bestellen</a>
+    <a class="rw-button rw-button-hell" href="#">Musterbericht ansehen</a>
+    <a class="rw-button rw-button-dunkel" href="#">Kontakt</a>
+    <span class="rw-pill">Stufe 1</span>
+    <span class="rw-pill rw-pill-hell">Richtwert</span>
+    <span class="rw-badge">nicht eingerechnet</span>
+    <span class="rw-badge rw-badge-ok">eingerechnet</span>
+  </div>
+
+  <h2>Kennzahlen</h2>
+  <div class="rw-raster-3">
+    <div class="rw-kpi"><b>633 m²</b><span>Geschossfläche wären möglich</span></div>
+    <div class="rw-kpi"><b>CHF 2.2 Mio.</b><span>geschätzter Wert heute</span></div>
+    <div class="rw-kpi rw-kpi-dunkel"><b>CHF 0.8 Mio.</b><span>Residualwert</span></div>
+  </div>
+
+  <h2>Karten</h2>
+  <div class="rw-raster-2">
+    <div class="rw-karte"><b>Normale Karte</b><p class="rw-klein">Für Regeln, Rollen, Hinweise.</p></div>
+    <div class="rw-karte rw-karte-aktiv"><b>Hervorgehobene Karte</b><p class="rw-klein">Für die gewählte Variante.</p></div>
+  </div>
+
+  <h2>Tabelle</h2>
+  <table class="rw-tabelle">
+    <thead><tr><th>Position</th><th>Annahme</th><th class="r">Betrag</th></tr></thead>
+    <tbody>
+      <tr><td>Verkaufserlös</td><td>Wohnfläche × Preis</td><td class="r">CHF 5’372’386</td></tr>
+      <tr><td>Baukosten</td><td>BKP 1 bis 9</td><td class="r">− CHF 3’631’992</td></tr>
+      <tr class="summe"><td>Residualwert</td><td>Erlös abzüglich Kosten und Gewinn</td><td class="r">CHF 788’054</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Formular</h2>
+  <div class="rw-raster-2">
+    <div class="rw-feld"><label for="a">Adresse oder Parzelle</label><input id="a" placeholder="Musterstrasse 1, 8610 Uster"></div>
+    <div class="rw-feld"><label for="m">E-Mail</label><input id="m" type="email" placeholder="name@beispiel.ch"></div>
+  </div>
+
+  <div class="rw-hinweis">Hinweis: Eine Linie in Petrol am Rand, für Vorbehalte und wichtige Bemerkungen.</div>
+  <div class="rw-fragen"><b>Fragen?</b><p>Melden Sie sich bei mir. Simon Käslin, Inhaber und Architekt SIA</p></div>
+  <p class="rw-vorbehalt">Allgemeine Hinweise, keine Beratung im Einzelfall.</p>
+</div>
+</body>
+</html>
