@@ -1,0 +1,24 @@
+/* raumwert plus: Seitenlayout für PDF-Berichte (A4, Briefkopf, Fusszeile).
+   Zusätzlich zu raumwert.css laden. Der Briefkopf steht in vorlagen/briefkopf.html. */
+
+@page {
+  size: A4;
+  margin: var(--rw-seite-rand-oben, 45mm) var(--rw-seite-rand-seite, 20mm) var(--rw-seite-rand-unten, 20mm);
+}
+html { background: var(--rw-papier); }
+.rw-blatt { background: var(--rw-weiss); max-width: 210mm; margin: 24px auto; padding: 12mm 20mm 20mm; box-shadow: 0 2px 18px rgba(0, 0, 0, .18); }
+.rw-kopf { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 10mm; }
+.rw-absender { font-size: 8pt; line-height: 1.35; }
+.rw-absender b { font-weight: var(--rw-grad-fett); }
+.rw-logo { width: 47mm; max-width: 40%; height: auto; }
+.rw-seitenumbruch { break-after: page; }
+
+@media print {
+  html { background: var(--rw-weiss); }
+  .rw-blatt { max-width: none; margin: 0; padding: 0; box-shadow: none; }
+  .rw-kopf { display: none; } /* im PDF setzt das Programm Kopf und Fusszeile pro Seite */
+  a { color: inherit; }
+}
+@media screen and (max-width: 720px) {
+  .rw-blatt { margin: 0; padding: 16px; box-shadow: none; }
+}

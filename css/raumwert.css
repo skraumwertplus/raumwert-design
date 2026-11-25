@@ -1,0 +1,87 @@
+/* raumwert plus: gemeinsame Bausteine für alle Programme und Berichte.
+   Einbinden mit einer Zeile:
+   <link rel="stylesheet" href="https://skraumwertplus.github.io/raumwert-design/css/raumwert.css">
+   Alle Werte kommen aus tokens.css. */
+
+@import url("tokens.css");
+
+/* Grundlage */
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  color: var(--rw-text);
+  font: var(--rw-grad-normal) var(--rw-gr-text)/var(--rw-zeilenabstand) var(--rw-schrift);
+}
+p { margin: 0 0 6pt; }
+ul, ol { margin: 0 0 8pt; padding-left: 16pt; }
+li { margin-bottom: 3pt; }
+a { color: var(--rw-akzent); }
+h1 { font-size: var(--rw-gr-h1); line-height: 1.12; font-weight: var(--rw-grad-halbfett); margin: 0 0 4pt; }
+h2 { font-size: var(--rw-gr-h2); font-weight: var(--rw-grad-halbfett); margin: 22pt 0 6pt; break-after: avoid; }
+h3 { font-size: var(--rw-gr-h3); font-weight: var(--rw-grad-halbfett); margin: 16pt 0 6pt; break-after: avoid; }
+.rw-klein { font-size: var(--rw-gr-klein); }
+.rw-lead { font-size: 12.5pt; font-weight: var(--rw-grad-halbfett); line-height: 1.4; margin: 6pt 0 8pt; }
+
+/* Buttons */
+.rw-button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6pt;
+  padding: 9pt 18pt; border: 1.5px solid var(--rw-akzent); border-radius: var(--rw-rund-pill);
+  background: var(--rw-akzent); color: var(--rw-weiss);
+  font: var(--rw-grad-mittel) 10.5pt var(--rw-schrift); text-decoration: none; cursor: pointer;
+}
+.rw-button:hover { filter: brightness(1.08); }
+.rw-button:focus-visible { outline: 2px solid var(--rw-navy); outline-offset: 2px; }
+.rw-button-hell { background: var(--rw-weiss); color: var(--rw-akzent); }
+.rw-button-dunkel { background: var(--rw-navy); border-color: var(--rw-navy); }
+
+/* Pills und Badges */
+.rw-pill { display: inline-block; padding: 4pt 11pt; border-radius: var(--rw-rund-pill); background: var(--rw-akzent); color: var(--rw-weiss); font-size: var(--rw-gr-klein); font-weight: var(--rw-grad-mittel); }
+.rw-pill-hell { background: var(--rw-band); color: var(--rw-text); }
+.rw-badge { font-size: 8.5pt; font-weight: var(--rw-grad-mittel); padding: 2pt 9pt; border-radius: var(--rw-rund-pill); background: var(--rw-weiss); border: 1px solid var(--rw-akzent); color: var(--rw-akzent); }
+.rw-badge-ok { background: var(--rw-akzent); color: var(--rw-weiss); }
+
+/* Karten und Kennzahlen */
+.rw-karte { border-radius: var(--rw-rund); background: var(--rw-flaeche); padding: 11pt 12pt; break-inside: avoid; }
+.rw-karte-aktiv { background: var(--rw-flaeche-aktiv); border: 1.5px solid var(--rw-akzent); }
+.rw-raster-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9pt; }
+.rw-raster-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9pt; }
+.rw-kpi { border-radius: var(--rw-rund); background: var(--rw-flaeche); padding: 9pt 11pt; display: flex; flex-direction: column; gap: 5pt; }
+.rw-kpi b { font-size: var(--rw-gr-kennzahl); line-height: 1.1; white-space: nowrap; }
+.rw-kpi span { font-size: var(--rw-gr-klein); line-height: 1.35; }
+.rw-kpi-dunkel { background: var(--rw-flaeche-dunkel); color: var(--rw-weiss); }
+.rw-symbol { width: 22px; height: 22px; color: var(--rw-akzent); display: block; }
+
+/* Kapitelnummer im Kreis */
+.rw-nr { flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--rw-navy); color: var(--rw-weiss); font-size: 12pt; font-weight: var(--rw-grad-fett); display: inline-flex; align-items: center; justify-content: center; }
+
+/* Tabellen: keine farbigen Köpfe, feine Linien */
+.rw-tabelle { width: 100%; border-collapse: collapse; margin: 6pt 0; font-size: 10.5pt; }
+.rw-tabelle th { font-weight: var(--rw-grad-halbfett); text-align: left; padding: 6pt; border-bottom: 1.5px solid var(--rw-text); vertical-align: bottom; }
+.rw-tabelle td { padding: 6pt; border-bottom: 1px solid var(--rw-linie); vertical-align: top; }
+.rw-tabelle .r { text-align: right; }
+.rw-tabelle tr { break-inside: avoid; }
+.rw-tabelle tr.summe td { font-weight: var(--rw-grad-fett); border-top: 1.5px solid var(--rw-text); border-bottom: 0; background: var(--rw-flaeche-aktiv); }
+
+/* Hinweise und Schluss */
+.rw-hinweis { border-left: 3px solid var(--rw-akzent); padding: 6pt 12pt; background: #F7F9F9; font-size: 10pt; break-inside: avoid; }
+.rw-fragen { margin-top: 14pt; border-radius: var(--rw-rund); background: var(--rw-band); padding: 12pt 14pt; break-inside: avoid; }
+.rw-vorbehalt { font-size: 9pt; font-style: italic; margin-top: 12pt; }
+
+/* Legenden zu Plänen */
+.rw-legende { display: flex; flex-wrap: wrap; gap: 4pt 14pt; margin-top: 7pt; font-size: var(--rw-gr-klein); }
+.rw-legende span { display: inline-flex; align-items: center; }
+.rw-lg { display: inline-block; width: 12pt; height: 9pt; margin-right: 5pt; border: 1px solid #000; border-radius: 2px; }
+
+/* Formulare */
+.rw-feld { display: flex; flex-direction: column; gap: 4pt; margin-bottom: 10pt; }
+.rw-feld label { font-weight: var(--rw-grad-halbfett); font-size: 10pt; }
+.rw-feld input, .rw-feld select, .rw-feld textarea {
+  font: inherit; color: inherit; padding: 8pt 10pt; border: 1px solid var(--rw-linie); border-radius: 10px; background: var(--rw-weiss);
+}
+.rw-feld input:focus, .rw-feld select:focus, .rw-feld textarea:focus { outline: 2px solid var(--rw-akzent); outline-offset: 0; }
+
+/* Handy */
+@media screen and (max-width: 720px) {
+  body { font-size: 15px; }
+  .rw-raster-3, .rw-raster-2 { grid-template-columns: minmax(0, 1fr); }
+}

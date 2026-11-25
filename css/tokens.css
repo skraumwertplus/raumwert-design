@@ -1,0 +1,80 @@
+/* raumwert plus: Design-Tokens
+   Die einzige Stelle, an der Farben, Schriften, Abstände und Rundungen festgelegt sind.
+   Programme verwenden immer die Namen (var(--rw-akzent)), nie die Farbwerte direkt.
+   Eine Änderung hier gilt für alle Programme, die raumwert.css laden. */
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Italic-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+
+  /* Farben der Marke (Website raumwertplus.ch) */
+  --rw-navy: #1F1D5C;          /* Schrift, Titel, dunkle Flächen */
+  --rw-petrol: #2A6963;        /* Akzent, Buttons, Symbole */
+  --rw-salbei: #C9DADA;        /* helle Bänder, Kasten «Fragen?» */
+  --rw-karte: #F2F6F6;         /* Hintergrund von Karten */
+  --rw-karte-aktiv: #E4EEEE;   /* hervorgehobene Karte, Summenzeile */
+  --rw-linie: #D9E3E3;         /* feine Linien, Tabellenzeilen */
+  --rw-weiss: #FFFFFF;
+  --rw-papier: #D9DBD7;        /* Hintergrund hinter dem Blatt am Bildschirm */
+
+  /* Rollen: diese Namen in Programmen verwenden */
+  --rw-text: var(--rw-navy);
+  --rw-akzent: var(--rw-petrol);
+  --rw-flaeche: var(--rw-karte);
+  --rw-flaeche-aktiv: var(--rw-karte-aktiv);
+  --rw-flaeche-dunkel: var(--rw-navy);
+  --rw-band: var(--rw-salbei);
+
+  /* Pläne und Schnitte (Darstellungsregeln siehe docs/plaene.md) */
+  --rw-plan-gebaeude: #7A7A7A;        /* eigenes Gebäude, mehrgeschossig */
+  --rw-plan-gebaeude-tief: #A8A8A8;   /* tieferer Gebäudeteil */
+  --rw-plan-gebaeude-eg: #CFCFCF;     /* eingeschossig, Garage */
+  --rw-plan-nachbar: #B8B8B8;         /* Nachbargebäude */
+  --rw-plan-nachbar-tief: #CFCFCF;
+  --rw-plan-nachbar-eg: #E4E4E4;
+  --rw-plan-parzelle: #F4F5F2;
+  --rw-plan-terrain: #EEF1EC;
+  --rw-plan-neubau: #E30613;          /* Neubau rot (SIA-Konvention) */
+  --rw-plan-abbruch: #FFD500;         /* Abbruch gelb (SIA-Konvention) */
+
+  /* Schrift */
+  --rw-schrift: "Montserrat", Arial, sans-serif;
+  --rw-grad-normal: 400;
+  --rw-grad-mittel: 500;
+  --rw-grad-halbfett: 600;
+  --rw-grad-fett: 700;
+  --rw-gr-text: 11pt;          /* nie kleiner im Fliesstext */
+  --rw-gr-klein: 9.5pt;        /* Bildlegenden, Fussnoten */
+  --rw-gr-h1: 27pt;
+  --rw-gr-h2: 17pt;
+  --rw-gr-h3: 12pt;
+  --rw-gr-kennzahl: 18pt;
+  --rw-zeilenabstand: 1.45;
+
+  /* Form und Abstand */
+  --rw-rund: 14px;             /* Karten, Boxen, Pläne */
+  --rw-rund-pill: 999px;       /* Buttons, Pills, Badges */
+  --rw-abstand-1: 4pt;
+  --rw-abstand-2: 8pt;
+  --rw-abstand-3: 12pt;
+  --rw-abstand-4: 20pt;
+
+  /* Seite (PDF) */
+  --rw-seite-rand-oben: 45mm;  /* Platz für den Briefkopf */
+  --rw-seite-rand-seite: 20mm;
+  --rw-seite-rand-unten: 20mm;
+}
