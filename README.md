@@ -16,7 +16,7 @@ Musterseite: https://skraumwertplus.github.io/raumwert-design/
 | `python/raumwert_stil.py` | Lädt den Stil in Python-Programme, mit lokaler Kopie für den Fall ohne Internet |
 | `docs/plaene.md` | Darstellungsregeln für Situationspläne und Schnitte |
 | `assets/` | Logo |
-| `fonts/` | Montserrat (SIL Open Font License, siehe `fonts/OFL.txt`) |
+| `fonts/` | Montserrat in festen Schnitten Light bis Bold, auch kursiv (SIL Open Font License, siehe `fonts/OFL.txt`). Die variablen Dateien sind nur noch als Reserve da. |
 
 ## In ein Programm einbinden
 
@@ -34,6 +34,8 @@ import raumwert_stil as stil
 html = f"<style>{stil.css()}</style> ..."
 farben = stil.tokens()["farben"]
 ```
+
+Bestehende Programme mit fest eingebauten Farben stellt man mit `stil.farben_ersetzen(html, zuordnung)` um: Die Funktion ersetzt jeden alten Farbwert durch den aktuellen aus `tokens.json`. So macht es die Grundstücksanalyse.
 
 ## Regeln
 
